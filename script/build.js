@@ -107,6 +107,7 @@ const ignore = require('metalsmith-ignore');
 const ignoreList = [];
 if (options.buildtype === 'production') {
   ignoreList.push('healthcare/blue-button/*');
+  ignoreList.push('gi-bill-comparison-tool/*');
 }
 smith.use(ignore(ignoreList));
 
@@ -143,6 +144,7 @@ if (options.watch) {
     historyApiFallback: {
       rewrites: [
         { from: '^/track-claims(.*)', to: '/track-claims/' },
+        { from: '^/gi-bill-comparison-tool(.*)', to: '/gi-bill-comparison-tool/' },
         { from: '^/disability-benefits/track-claims(.*)', to: '/disability-benefits/track-claims/' },
         { from: '^/education/apply-for-education-benefits/application(.*)', to: '/education/apply-for-education-benefits/application/' },
         { from: '^/facilities(.*)', to: '/facilities/' },
