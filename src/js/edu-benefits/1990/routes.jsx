@@ -2,6 +2,7 @@ import { chapterNames, hasServiceBefore1978 } from '../utils/helpers';
 import { groupPagesIntoChapters, getPageList } from '../../common/utils/helpers';
 
 import IntroductionPage from './containers/IntroductionPage.jsx';
+import IntroductionManagePage from './containers/IntroductionManagePage.jsx';
 import VeteranInformationReview from './components/veteran-information/VeteranInformationReview';
 import VeteranInformationFields from './components/veteran-information/VeteranInformationFields';
 import BenefitsSelectionReview from './components/benefits-eligibility/BenefitsSelectionReview';
@@ -35,6 +36,10 @@ const routes = [
   {
     component: IntroductionPage,
     path: 'introduction',
+  },
+  {
+    component: IntroductionManagePage,
+    path: 'manage-benefit',
   },
   {
     component: FormPage,
