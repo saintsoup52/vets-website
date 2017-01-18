@@ -13,7 +13,10 @@ export default class PersonalInformationFields extends React.Component {
     const { day, month, year } = this.props.data.veteranDateOfBirth;
     return (
       <fieldset>
-        <p>You aren’t required to fill in <strong>all</strong> fields, but VA can evaluate your claim faster if you provide more information.</p>
+      <div className="usa-alert usa-alert-info"><div className="usa-alert-body"><span>Before you continue, please note that the presence of form fields indicates information is being collected.</span>
+
+</div></div>
+<p>You aren’t required to fill in <strong>all</strong> fields, but VA can evaluate your claim faster if you provide more information.</p>
         <p><span className="form-required-span">*</span>Indicates a required field</p>
         <legend className="hide-for-small-only">Veteran information</legend>
         <div className="input-section">

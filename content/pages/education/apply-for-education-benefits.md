@@ -24,7 +24,15 @@ If you are a Servicemember, Veteran, or dependent interested in education and tr
 
 <br/>
 
+<h6>Other Ways to Apply</h6>
+<ul>
+<li>Go to a <a href="/facilities">VA regional office</a> and have a VA employee assist you.</li>
+<li>Work with your school’s VA certifying official. This person is usually in the Registrar or Financial Aid office at the school of your choice.</li>
+<li>Call 888-442-4551 (888-GI-BILL-1) from 8:00 a.m. - 7:00 p.m. ET Mon - Fri, to have the application mailed to you. Fill it out and mail it to your <a href="http://www.benefits.va.gov/gibill/regional_processing.asp">VA regional claims processing office</a>.</li>
+</ul>
+
 <div class="feature usa-content" markdown="1">
+
 
 ##### Checking in on the status of your application?
 
