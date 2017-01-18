@@ -7,7 +7,12 @@
 				Begin Application
 			{% endif %}
     </a>
-    <p class="small">Usually processed within</p>
-    <h3>30 days</h3>
+    {% if beginsecondarybuttontext %}
+    <a href="/education/apply-for-education-benefits/application/1990" class="usa-button-primary usa-button-outline transparent">
+      {{ beginsecondarybuttontext }}
+    </a>
+    {% endif %}
+    <p class="small">Usually processed within <strong>14–30 days</strong></p>
+
   </div>
 </div>

@@ -6,7 +6,8 @@ modal: true
 concurrence: complete
 showactionbar: false
 stickyactionbox: true
-beginbuttontext: Start Form 22-1990
+beginbuttontext: Begin Application
+beginsecondarybuttontext: Manage Benefit
 relatedlinks:
   - url: /education/gi-bill/survivors-dependent-assistance/
     title: Apply for Dependents’ Educational Assistance (DEA) benefits
@@ -16,29 +17,9 @@ relatedlinks:
     title: Learn about the National Call to Service program
 ---
 
-If you are a Servicemember or Veteran interested in education and training opportunities, use Form 22-1990 to apply for your Certificate of Eligibility (COE).
+If you are a Servicemember, Veteran, or dependent interested in education and training opportunities, you can apply for your Certificate of Eligibility (COE) or manage an existing benefit.
 
-<div class="usa-alert usa-alert-warning usa-content secondary" markdown="1">
-	<div class="usa-alert-body">
-
-##### For Forms 22-1990E, 22-1990N, 22-1995, 22-5490, and 22-5495
-
-You must apply for education benefits using eBenefits.va.gov if you are:
-- A spouse or dependent
-- A survivor of a Veteran
-- A candidate for The National Call to Service program
-- A current education benefit recipient who wants to change schools
-
-
-<div markdown="0">
-	<a class="usa-button-primary usa-button-outline usa-button-outline-exit transparent" href="https://www.ebenefits.va.gov/ebenefits/vonapp">Apply on eBenefits</a>
-</div>
-</div>
-</div>
-
-<br>
-
-### What are the steps to apply with Form 22-1990?
+## What are the steps?
 
 <div class="small-12 columns" markdown="0">
 <ol class="process" markdown="0">
@@ -46,26 +27,27 @@ You must apply for education benefits using eBenefits.va.gov if you are:
 
 <div markdown="1">
 
-##### Prepare
+### Prepare
 
 </div>
 
 <div markdown="1">
 
-###### Check your eligibility
+#### Check your eligibility
 
 You may be eligible for more than one benefit, based on your service. When you apply, you have to pick which one you want to use:
-
 - [Post- 9/11 GI Bill](/education/gi-bill/post-9-11/) (Chapter 33)
 - [Montgomery GI Bill](/education/gi-bill/montgomery-active-duty/) (MGIB-AD, Chapter 30)
 - [Montgomery GI Bill Selected Reserve](/education/gi-bill/montgomery-selected-reserve/) (MGIB-SR, Chapter 1606)
 - [Post-Vietnam Era Veterans' Educational Assistance Program](/education/other-educational-assistance-programs/veap/) (VEAP, Chapter 32)
+- [Post-9/11 GI Bill Marine Gunnery Sergeant John David Fry Scholarship](/education/gi-bill/survivors-dependent-assistance/fry-scholarship/) (Fry Scholarship or Chapter 33) **Dependents only**
+- [Survivors’ and Dependents’ Educational Assistance program](/education/gi-bill/survivors-dependent-assistance/dependents-education/) (DEA or Chapter 35) **Dependents only**
 
 [An accredited representative]( http://www.va.gov/ogc/apps/accreditation/index.asp) with a Veterans Service Organization (VSO) can help you pick the right program.
 
 ###### Learn about educational programs
 
-- Compare estimated benefits by school using the [GI Bill Comparison Tool](/gi-bill-comparison-tool/).
+- See estimated benefits at the school you want to attend using the [GI Bill Comparison Tool](/gi-bill-comparison-tool/).
 
 </div>
 
@@ -88,13 +70,21 @@ You may be eligible for more than one benefit, based on your service. When you a
 
 <div markdown="1">
 
-##### Apply
+##### Apply or Manage
 
 </div>
-
-<a href="/education/apply-for-education-benefits/application/1990" class="usa-button-primary va-button-primary">Start Form 22-1990</a>
+<p>
+<a href="/education/apply-for-education-benefits/application/1990" class="usa-button-primary va-button-primary button-inline">Begin Application</a><a href="/education/apply-for-education-benefits/application/1990" class="usa-button-primary usa-button-outline button-inline">Manage Benefit</a>
+</p>
 
 <div markdown="1">
+
+###### Manage Benefit if...
+
+- You’re changing schools.
+- You’re changing your educational, professional, vocational goal.
+- You left your program (for any reason) and you’re now reentering the same program.
+- You were receiving VA Education Benefits as a Veteran and now wish to receive benefits while on active military duty.
 
 ###### Other Ways to Apply
 
@@ -114,7 +104,7 @@ You may be eligible for more than one benefit, based on your service. When you a
 
 ###### How long does it take VA to make a decision?
 
-- We usually process claims within 30 days.
+- We usually process new claims within 14–30 days.
 
 ###### What should I do while I wait?
 
@@ -134,8 +124,8 @@ You may be eligible for more than one benefit, based on your service. When you a
 
 ##### Decision
 
-- We usually process claims within 30 days.
-- You'll get a COE in the mail if your application was approved. Bring this to the VA certifying official at your school.
+- We usually process claims within 14–30 days.
+- You’ll get a COE or Award Letter in the mail if your application was approved. Bring this to the VA certifying official at your school.
 
 </div>
 
@@ -147,7 +137,7 @@ You may be eligible for more than one benefit, based on your service. When you a
 
 ##### Checking in on the status of your application?
 
-- We usually process claims within 30 days.
+- We usually process claims within 14–30 days.
 - If we’ve asked for documents, please upload them through the [GI Bill site](https://gibill.custhelp.com/app/home).
 - You can’t make changes to your application.
 - For questions about Education Benefits please call 1-888-442-4551 (1-888-GI-BILL-1) from 8:00 a.m. - 7:00 p.m. ET Mon - Fri.
