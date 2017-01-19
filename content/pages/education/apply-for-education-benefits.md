@@ -19,6 +19,9 @@ relatedlinks:
 
 If you are a Servicemember, Veteran, or dependent interested in education and training opportunities, you can apply for your Certificate of Eligibility (COE) or manage an existing benefit.
 
+<strong>Begin Application</strong> to fill out Forms 22-1990, 22-1990E, 22-1990N, or 22-5490.  
+<strong>Manage Benefit</strong> to fill out Forms 22-1995, or 22-5495.
+
 ## What are the steps?
 
 <div class="small-12 columns" markdown="0">
