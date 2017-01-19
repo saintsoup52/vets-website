@@ -9,6 +9,8 @@ class IntroductionPage extends React.Component {
     return (
     <div>
     <h3>Application for Education Benefits</h3>
+    <span>This application is equivalent to Forms 22-1990, 22-1990E, 22-1990N, or 22-5490.</span><br/><br/>
+
 
     <div className="small-12 columns" markdown="0">
     <ol className="process" markdown="0">

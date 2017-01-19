@@ -93,7 +93,7 @@ class EduBenefitsApp extends React.Component {
       <div className="row">
         {devPanel}
         <Element name="topScrollElement"/>
-        <div className="small-8 columns">
+        <div className="small-12 medium-8 columns">
           <div className="progress-box">
             <NavHeader path={currentLocation.pathname} chapters={chapters} className="show-for-small-only"/>
             {this.props.children}
