@@ -13,11 +13,13 @@ class MessageAddAttachment extends React.Component {
         <input
             multiple
             accept={mimeTypes}
+            aria-labelledby={`label-${this.props.id}`}
             id={this.props.id}
             name={this.props.name}
             onChange={this.props.onChange}
             type="file"/>
         <label
+            id={`label-${this.props.id}`}
             tabIndex="-1"
             className="va-icon-link"
             htmlFor={this.props.id}>
