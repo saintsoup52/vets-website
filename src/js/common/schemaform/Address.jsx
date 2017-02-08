@@ -67,7 +67,6 @@ class Address extends React.Component {
       postalCodeUiSchema = set('ui:title', 'ZIP code', postalCodeUiSchema);
     }
 
-    // const hasErrors = (formContext.submitted || touchedSchema) && rawErrors && rawErrors.length;
     if (states[selectedCountry]) {
       stateList = states[selectedCountry];
       if (formData.city && this.isMilitaryCity(formData.city)) {

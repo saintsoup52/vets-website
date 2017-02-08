@@ -15,16 +15,26 @@ const props = {
 	  postalCode: '60611',
 	},
 	schema: {
-		properties: {}
+    type: 'object',
+		properties: {
+      country: {},
+      street: {},
+      street2: {},
+      city: {},
+      state: {},
+      postalCode: {},
+    },
+    required: []
 	},
 	registry: {
 		fields: {
-			SchemaFields: {}
+			SchemaFields: f => f
 		}
 	},
 	uiSchema: {},
 	idSchema: {},
-	errorSchema: {}
+	errorSchema: {},
+  touchedSchema: {}
 }
 
 describe('Schemaform: Address', () => {
@@ -41,10 +51,20 @@ describe('Schemaform: Address', () => {
           schema={props.schema}
           uiSchema={props.uiSchema}
           idSchema={props.idSchema}
-          errorSchema={props.errorSchema}/>
+          errorSchema={props.errorSchema}
+          touchedSchema={props.touchedSchema}/>
     );
 
-    debugger;
+    const renderedSubTree1 = tree.everySubTree()[0];
+
+    console.log(tree.props);
+    // console.log(renderedSubTree1);
+    console.log(renderedSubTree1.getRenderOuput);
+    // console.log('getRenderOuput': renderedSubTree1.getRenderOutput());
+    console.log('type': renderedSubTree1.type);
+    console.log('props': renderedSubTree1.props);
+
+
     expect(tree.everySubTree('select').length).to.equal(2);
     expect(tree.everySubTree('input').length).to.equal(4);
   });

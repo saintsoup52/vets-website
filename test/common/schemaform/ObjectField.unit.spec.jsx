@@ -27,7 +27,7 @@ describe('Schemaform: ObjectField', () => {
 
     expect(tree.everySubTree('shouldUpdate(SchemaField)')).not.to.be.empty;
   });
-  it('should render description', () => {
+  it.only('should render description', () => {
     const onChange = sinon.spy();
     const onBlur = sinon.spy();
     const schema = {
@@ -49,6 +49,8 @@ describe('Schemaform: ObjectField', () => {
           onChange={onChange}
           onBlur={onBlur}/>
     );
+
+    console.log(tree.getRenderOutput());
 
     expect(tree.text()).to.contain('Blah');
   });
