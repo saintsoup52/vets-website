@@ -12,7 +12,7 @@ const initialState = {
   },
   email: null,
   dob: null,
-  gender: null,
+  gender: '',
   accountType: null
 };
 

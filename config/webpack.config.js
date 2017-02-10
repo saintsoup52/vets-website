@@ -14,6 +14,7 @@ require('babel-polyfill');
 
 const entryFiles = {
   'disability-benefits': './src/js/disability-benefits/disability-benefits-entry.jsx',
+  'discharge-upgrade': './src/js/discharge-upgrade/discharge-upgrade-entry.jsx',
   'edu-benefits': './src/js/edu-benefits/edu-benefits-entry.jsx',
   facilities: './src/js/facility-locator/facility-locator-entry.jsx',
   gi: './src/js/gi/gi-entry.jsx',
