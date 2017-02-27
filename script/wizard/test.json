@@ -1,0 +1,51 @@
+{
+  "questions": {
+    "q1": {
+      "question": [
+        "Which of the following categories describes your reason for wanting to change your discharge paperwork?"
+      ],
+      "answers": [
+        "PTSD",
+        "Trans",
+        "MST",
+        "DADT"
+      ]
+    },
+    "q2": {
+      "question": [
+        "Which branch did you serve?"
+      ],
+      "answers": [
+        "Army",
+        "Navy",
+        "Marines",
+        "Air Force",
+        "Coast Guard"
+      ]
+    }
+  },
+  "content": {
+    "PTSD": {
+      "Army": {
+        "text": "blah blah blah"
+      },
+      "Marines": {
+        "text": "blah blah blah"
+      },
+      "Air Force": {
+        "text": "blah blah blah"
+      }
+    },
+    "DADT": {
+      "Army": {
+        "text": "blah blah blah"
+      },
+      "Marines": {
+        "text": "blah blah blah"
+      },
+      "Air Force": {
+        "text": "blah blah blah"
+      }
+    }
+  }
+}

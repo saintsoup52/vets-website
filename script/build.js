@@ -6,6 +6,7 @@ const assets = require('metalsmith-assets');
 const blc = require('metalsmith-broken-link-checker');
 const collections = require('metalsmith-collections');
 const commandLineArgs = require('command-line-args');
+const dataLoader = require('metalsmith-data-loader');
 const dateInFilename = require('metalsmith-date-in-filename');
 const define = require('metalsmith-define');
 const filenames = require('metalsmith-filenames');
@@ -143,6 +144,10 @@ smith.use(define({
   buildtype: options.buildtype
 }));
 
+smith.use(dataLoader({
+  dataProperty: 'data',
+}));
+
 smith.use(collections());
 smith.use(dateInFilename(true));
 smith.use(archive());  // TODO(awong): Can this be removed?
@@ -244,6 +249,7 @@ smith.use((files, metalsmith, done) => {
   done();
 });
 
+
 // smith.use(cspHash({ pattern: ['js/*.js', 'generated/*.css', 'generated/*.js'] }))
 
 // Liquid substitution must occur before markdown is run otherwise markdown will escape the
@@ -267,6 +273,7 @@ smith.use(markdown({
   typographer: true,
   html: true
 }));
+
 
 // Responsible for create permalink structure. Most commonly used change foo.md to foo/index.html.
 //

@@ -1,0 +1,89 @@
+<div class="main" role="main">
+  <div class="section one">
+    <div class="primary">
+      <div class="row">
+        <div class="small-12 columns usa-content">
+
+        <h1>{{ title }}</h1>
+        <!-- Page content begins -->
+
+        {{ contents }}
+
+        <div class="form-panel">
+          <fieldset>
+            <div class="input-section"> 
+
+          {% if data %}
+            {% for question in data.questions %}
+              <div>
+                <label for="question{{ forloop.index }}">{{ question.text }}</label>
+                {% if forloop.last == true %}
+                  <select name="question{{ forloop.index }}" id="question{{ forloop.index }}" onchange="willAlert(this.value)">
+                    <option value="option0">Choose One</option>
+                    {% for answer in question.answers %}
+                    <option value="{{ answer | downcase }}">{{answer}}</option>
+                    {% endfor %}
+                  </select>
+                {% else %}
+                  <select name="question{{ forloop.index }}" id="question{{ forloop.index }}">
+                    <option value="option0">Choose One</option>
+                    {% for answer in question.answers %}
+                    <option value="{{ answer | downcase }}">{{answer}}</option>
+                    {% endfor %}
+                  </select>
+                {% endif %}
+                </div>
+            {% endfor %}
+
+          </div>
+          </fieldset>
+        </div>
+        <div id="content-json">
+          {{ data.content | json }}
+        </div>
+        <div id="wizard-content">
+        </div>
+        {% endif %}
+
+        <!-- Page content ends -->
+
+        <!-- Last updated -->
+        {% if lastupdate %}
+          {% include "content/includes/last-update.html" %}
+        {% endif %}
+
+        </div>
+      </div>
+    </div>
+    {% if relatedlinks %}
+      {% include "content/includes/main-navigation.html" %}
+    {% endif %}
+  </div>
+</div>
+
+<script type="text/javascript">
+  var json = document.getElementById('content-json');
+  var el = document.getElementById('wizard-content');
+  var content = JSON.parse(json.innerHTML);
+  
+  json.style.display = 'none';
+
+  console.log(JSON.parse(json.innerHTML));
+
+  // if select equals 'question' + i then store value.
+  var cars = ["BMW", "Volvo", "Saab", "Ford"];
+  var i = 0;
+  var text = "";
+  for (;cars[i];) {
+      text += cars[i] + "<br>";
+      i++;
+  }
+
+  // 
+
+  function willAlert(val) {
+    el.style.display = '';
+    el.innerHTML = content.PTSD.Army.text;
+  }
+
+</script>
