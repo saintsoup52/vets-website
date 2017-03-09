@@ -6,18 +6,18 @@ import {
 import fullSchema1990e from 'vets-json-schema/dist/transfer-benefits-schema.json';
 
 const {
-    postHighSchoolTrainings,
-    school
+  postHighSchoolTrainings,
 } = fullSchema1990e.definitions;
 
-import * as address from '../../../common/schemaform/definitions/address';
 import * as date from '../../../common/schemaform/definitions/date';
+import * as dateRange from '../../../common/schemaform/definitions/dateRange';
 import * as currentOrPastDate from '../../../common/schemaform/definitions/currentOrPastDate';
 import * as fullName from '../../../common/schemaform/definitions/fullName';
 import * as ssn from '../../../common/schemaform/definitions/ssn';
 
 import IntroductionPage from '../components/IntroductionPage';
 import ConfirmationPage from '../containers/ConfirmationPage';
+import EducationView from '../../components/EducationView';
 
 import {
   benefitsLabels,
@@ -31,7 +31,8 @@ const {
 } = fullSchema1990e.definitions;
 
 const {
-  benefit
+  benefit,
+  faaFlightCertificatesInformation
 } = fullSchema1990e.properties;
 
 const formConfig = {
@@ -41,6 +42,9 @@ const formConfig = {
   transformForSubmit: transform,
   introduction: IntroductionPage,
   confirmation: ConfirmationPage,
+  defaultDefinitions: {
+    dateRange: dateRange.schema
+  },
   title: 'Apply for transferred education benefits',
   subTitle: 'Form 22-1990e',
   chapters: {
@@ -130,24 +134,60 @@ const formConfig = {
           },
           uiSchema: {
             highSchoolOrGedCompletionDate: date.uiSchema('When did you earn your high school diploma or equivalency certificate?'),
-            // replace with postHighSchoolTrainings
-            school: {
-              name: {
-                'ui:title': 'Name of college, university or other training provider'
+            'view:educationHistory': {
+              'ui:title': 'Please list all past post-high school trainings you have completed (or something like that):'
+            },
+            postHighSchoolTrainings: {
+              'ui:title': 'Education after high school',
+              'ui:options': {
+                itemName: 'Training',
+                viewField: EducationView,
+                hideTitle: true,
               },
-              address: _.pick(['city', 'state'], address.uiSchema()),
+              items: {
+                name: {
+                  'ui:title': 'Name of college, university or other training provider'
+                },
+                city: {
+                  'ui:title': 'City'
+                },
+                state: {
+                  'ui:title': 'State'
+                },
+                dateRange: dateRange.uiSchema(
+                  'From',
+                  'To'
+                ),
+                hours: {
+                  'ui:title': 'Hours completed'
+                },
+                // add labels for hour types
+                hoursType: {
+                  'ui:title': 'Type of hours'
+                },
+                degreeReceived: {
+                  'ui:title': 'Degree, diploma or certificate received'
+                },
+                major: {
+                  'ui:title': 'Major or course of study (NOT for high school)'
+                }
+              }
+            },
+            faaFlightCertificatesInformation: {
+              'ui:title': 'If you have any FAA flight certificates, please list them here.',
+              'ui:widget': 'textarea'
             }
           },
           schema: {
             type: 'object',
             properties: {
               highSchoolOrGedCompletionDate: date.schema,
-              postHighSchoolTrainings
-              /*
-              school: _.set('properties.address',
-                            _.pick(['type', 'required', 'properties.city', 'properties.state'], address.schema()),
-                            school),
-               */
+              'view:educationHistory': {
+                type: 'object',
+                properties: {}
+              },
+              postHighSchoolTrainings,
+              faaFlightCertificatesInformation
             }
           }
         }
