@@ -5,6 +5,13 @@ import {
 
 import fullSchema1990e from 'vets-json-schema/dist/transfer-benefits-schema.json';
 
+const {
+    postHighSchoolTrainings,
+    school
+} = fullSchema1990e.definitions;
+
+import * as address from '../../../common/schemaform/definitions/address';
+import * as date from '../../../common/schemaform/definitions/date';
 import * as currentOrPastDate from '../../../common/schemaform/definitions/currentOrPastDate';
 import * as fullName from '../../../common/schemaform/definitions/fullName';
 import * as ssn from '../../../common/schemaform/definitions/ssn';
@@ -116,6 +123,34 @@ const formConfig = {
     educationHistory: {
       title: 'Education History',
       pages: {
+        educationHistory: {
+          path: 'education-history',
+          title: 'Education History',
+          initialData: {
+          },
+          uiSchema: {
+            highSchoolOrGedCompletionDate: date.uiSchema('When did you earn your high school diploma or equivalency certificate?'),
+            // replace with postHighSchoolTrainings
+            school: {
+              name: {
+                'ui:title': 'Name of college, university or other training provider'
+              },
+              address: _.pick(['city', 'state'], address.uiSchema()),
+            }
+          },
+          schema: {
+            type: 'object',
+            properties: {
+              highSchoolOrGedCompletionDate: date.schema,
+              postHighSchoolTrainings
+              /*
+              school: _.set('properties.address',
+                            _.pick(['type', 'required', 'properties.city', 'properties.state'], address.schema()),
+                            school),
+               */
+            }
+          }
+        }
       }
     },
     employmentHistory: {
