@@ -21,8 +21,9 @@ import EducationView from '../../components/EducationView';
 
 import {
   benefitsLabels,
-  relationshipLabels,
-  genderLabels
+  genderLabels,
+  hoursTypeLabels,
+  relationshipLabels
 } from '../../utils/helpers';
 
 const {
@@ -161,9 +162,11 @@ const formConfig = {
                 hours: {
                   'ui:title': 'Hours completed'
                 },
-                // add labels for hour types
                 hoursType: {
-                  'ui:title': 'Type of hours'
+                  'ui:title': 'Type of hours',
+                  'ui:options': {
+                    labels: hoursTypeLabels
+                  }          
                 },
                 degreeReceived: {
                   'ui:title': 'Degree, diploma or certificate received'
