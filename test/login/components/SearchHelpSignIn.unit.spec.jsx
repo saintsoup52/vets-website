@@ -1,7 +1,7 @@
 import React from 'react';
 import SkinDeep from 'skin-deep';
 import { expect } from 'chai';
-
+ 
 import { SignInProfileButton } from '../../../src/js/login/components/SignInProfileButton.jsx';
 
 describe('<SignInProfileButton>', () => {

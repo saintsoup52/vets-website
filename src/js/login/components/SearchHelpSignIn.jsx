@@ -64,7 +64,7 @@ const mapDispatchToProps = (dispatch) => {
     onUpdateLoggedInStatus: (update) => {
       dispatch(updateLoggedInStatus(update));
     }
-  };
+  }; 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps, undefined, { pure: false })(SignInProfileButton);
