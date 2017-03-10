@@ -48,7 +48,8 @@ const mapStateToProps = (state) => {
   const userState = state.user;
   return {
     login: userState.login,
-    profile: userState.profile
+    profile: userState.profile,
+    searchHelpUserIsOpen: state.searchHelpUserIsOpen
   };
 };
 

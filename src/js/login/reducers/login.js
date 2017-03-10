@@ -8,6 +8,11 @@ const initialState = {
     first: null,
     third: null
   },
+  searchHelpUserIsOpen: {
+    search: false,
+    helpMenu: false,
+    userMenu: false
+  }
 };
 
 function loginStuff(state = initialState, action) {
