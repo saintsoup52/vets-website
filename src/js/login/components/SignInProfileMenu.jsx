@@ -16,17 +16,20 @@ class SignInProfileMenu extends React.Component {
     return (
       <DropDown
           buttonText={this.props.greeting}
+          clickHandler={this.props.clickHandler}
           contents={dropDownContents}
-          id="usermenu"
+          id="accountMenu"
           icon={icon}
-          isOpen={false}/>
+          isOpen={this.props.isOpen}/>
     );
   }
 }
 
 SignInProfileMenu.propTypes = {
+  clickHandler: React.PropTypes.func.isRequired,
   cssClass: React.PropTypes.string,
-  greeting: React.PropTypes.node.isRequired
+  greeting: React.PropTypes.node.isRequired,
+  isOpen: React.PropTypes.bool.isRequired
 };
 
 export default SignInProfileMenu;

@@ -1,19 +1,26 @@
 import _ from 'lodash/fp';
 
-import { UPDATE_LOGGEDIN_STATUS, UPDATE_LOGIN_URL, LOG_OUT } from '../actions';
+import { UPDATE_LOGGEDIN_STATUS, UPDATE_LOGIN_URL, LOG_OUT, UPDATE_SEARCH_HELP_USER_MENU } from '../actions';
 
 const initialState = {
-  currentlyLoggedIn: false,
+  currentlyLoggedIn: true,
   loginUrl: {
     first: null,
     third: null
   },
-  searchHelpUserIsOpen: {
+  utilitiesMenuIsOpen: {
     search: false,
-    helpMenu: false,
-    userMenu: false
+    help: false,
+    account: false
   }
 };
+
+function resetUtilitiesMenu(state = initialState) {
+  const menus = Object.keys(state.utilitiesMenuIsOpen);
+  const update = menus.map((key) => {
+    return _.set(`utilitiesMenuIsOpen.${key}`, false, state);
+  });
+}
 
 function loginStuff(state = initialState, action) {
   switch (action.type) {
@@ -25,6 +32,10 @@ function loginStuff(state = initialState, action) {
 
     case LOG_OUT:
       return _.set('currentlyLoggedIn', false, state);
+
+    case UPDATE_SEARCH_HELP_USER_MENU:
+      const newState = resetUtilitiesMenu(state);
+      return _.set(`utilitiesMenuIsOpen.${action.menu}`, action.isOpen, newState);
 
     default:
       return state;
