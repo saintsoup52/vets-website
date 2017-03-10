@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
+import HelpMenu from '../../common/components/HelpMenu';
+import SearchMenu from '../../common/components/SearchMenu';
+import SignInProfileMenu from './SignInProfileMenu';
+
 import DropDown from '../../common/components/DropDown';
 import IconUser from '../../common/components/svgicons/IconUser';
 
@@ -19,24 +23,7 @@ class SignInProfileButton extends React.Component {
       } else {
         greeting = this.props.profile.email;
       }
-
-      const icon = <IconUser color="#fff"/>;
-
-      const dropDownContents = (
-        <ul>
-          <li><a href="/profile">Account</a></li>
-          <li><a href="#" onClick={this.props.onUserLogout}>Sign Out</a></li>
-        </ul>
-      );
-
-      content = (
-        <DropDown
-            buttonText={greeting}
-            contents={dropDownContents}
-            id="usermenu"
-            icon={icon}
-            isOpen={false}/>
-      );
+      content = <SignInProfileMenu/>;
     } else {
       content = (<div>
         <a href="#" onClick={this.props.onUserLogin}>Sign In</a><span className="signin-spacer">|</span><a href="#" onClick={this.props.onUserSignup}>Register</a>
@@ -44,8 +31,12 @@ class SignInProfileButton extends React.Component {
       );
     }
     return (
-      <div className="sign-in-link">
-        {content}
+      <div>
+        <SearchMenu/>
+        <HelpMenu/>
+        <div className="sign-in-link">
+          {content}
+        </div>
       </div>
     );
   }
