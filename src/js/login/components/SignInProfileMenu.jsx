@@ -4,7 +4,7 @@ import IconUser from '../../common/components/svgicons/IconUser';
 
 class SignInProfileMenu extends React.Component {
   render() {
-    const icon = <IconUser color="#fff"/>;;
+    const icon = <IconUser color="#fff"/>;
 
     const dropDownContents = (
       <ul>
@@ -15,7 +15,7 @@ class SignInProfileMenu extends React.Component {
 
     return (
       <DropDown
-          buttonText={greeting}
+          buttonText={this.props.greeting}
           contents={dropDownContents}
           id="usermenu"
           icon={icon}
@@ -25,7 +25,8 @@ class SignInProfileMenu extends React.Component {
 }
 
 SignInProfileMenu.propTypes = {
-  cssClass: React.PropTypes.string
+  cssClass: React.PropTypes.string,
+  greeting: React.PropTypes.node.isRequired
 };
 
 export default SignInProfileMenu;

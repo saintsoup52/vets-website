@@ -11,10 +11,12 @@ import IconUser from '../../common/components/svgicons/IconUser';
 
 import { updateLoggedInStatus } from '../actions';
 
-class SignInProfileButton extends React.Component {
+class SearchHelpSignIn extends React.Component {
   render() {
     let content;
     let greeting;
+
+    console.log(this.props);
 
     if (this.props.login.currentlyLoggedIn) {
       if (this.props.profile.userFullName.first) {
@@ -23,7 +25,7 @@ class SignInProfileButton extends React.Component {
       } else {
         greeting = this.props.profile.email;
       }
-      content = <SignInProfileMenu/>;
+      content = <SignInProfileMenu greeting={greeting}/>;
     } else {
       content = (<div>
         <a href="#" onClick={this.props.onUserLogin}>Sign In</a><span className="signin-spacer">|</span><a href="#" onClick={this.props.onUserSignup}>Register</a>
@@ -58,5 +60,5 @@ const mapDispatchToProps = (dispatch) => {
   }; 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps, undefined, { pure: false })(SignInProfileButton);
-export { SignInProfileButton };
+export default connect(mapStateToProps, mapDispatchToProps, undefined, { pure: false })(SearchHelpSignIn);
+export { SearchHelpSignIn };
