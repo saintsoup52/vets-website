@@ -136,7 +136,7 @@ const formConfig = {
           uiSchema: {
             highSchoolOrGedCompletionDate: date.uiSchema('When did you earn your high school diploma or equivalency certificate?'),
             'view:educationHistory': {
-              'ui:title': 'Please list all past post-high school trainings you have completed (or something like that):'
+              'ui:title': 'Please list any post-high school trainings you have completed.'
             },
             postHighSchoolTrainings: {
               'ui:title': 'Education after high school',
