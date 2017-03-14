@@ -157,4 +157,3 @@ export function showYesNo(field) {
 export function enumToNames(enumValues, names) {
   return enumValues.map(item => names[item]);
 }
-

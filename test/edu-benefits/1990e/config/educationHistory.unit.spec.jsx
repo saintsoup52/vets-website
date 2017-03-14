@@ -22,20 +22,6 @@ describe('Edu 1990e educationHistory', () => {
     expect(fields.length).to.equal(8);
   });
   it('should have no required inputs', () => {
-    const form = ReactTestUtils.renderIntoDocument(
-      <DefinitionTester
-          schema={schema}
-          data={{}}
-          uiSchema={uiSchema}
-          definitions={definitions}/>
-    );
-    const formDOM = findDOMNode(form);
-    submitForm(form);
-    expect(Array.from(formDOM.querySelectorAll('.usa-input-error'))).to.be.empty;
-    // TODO: find out why onSubmit is not called
-    // expect(onSubmit.called).to.be.true;
-  });
-  it('should add another training', () => {
     const onSubmit = sinon.spy();
     const form = ReactTestUtils.renderIntoDocument(
       <DefinitionTester
@@ -46,15 +32,8 @@ describe('Edu 1990e educationHistory', () => {
           definitions={definitions}/>
     );
     const formDOM = findDOMNode(form);
-    const find = formDOM.querySelector.bind(formDOM);
-    ReactTestUtils.Simulate.change(find('#root_postHighSchoolTrainings_0_name'), {
-      target: {
-        value: 'College name'
-      }
-    });
-    ReactTestUtils.Simulate.click(formDOM.querySelector('.va-growable-add-btn'));
-    const firstTraining = Array.from(formDOM.querySelectorAll('.va-growable-background'))[0];
-    expect(firstTraining.textContent).to.contain('College name');
-    expect(firstTraining.querySelector('button').textContent).to.equal('Edit');
+    submitForm(form);
+    expect(Array.from(formDOM.querySelectorAll('.usa-input-error'))).to.be.empty;
+    expect(onSubmit.called).to.be.true;
   });
 });
