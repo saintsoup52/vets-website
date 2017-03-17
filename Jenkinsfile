@@ -43,7 +43,7 @@ node('vets-website-linting') {
     def imageTag = java.net.URLDecoder.decode(env.BUILD_TAG).replaceAll("[^A-Za-z0-9\\-\\_]", "-")
 
     dockerImage = docker.build("vets-website:${imageTag}")
-    args = "-u root:root -v ${pwd()}/build:/application/build -v ${pwd()}/logs:/application/logs -v ${pwd()}/coverage:/application/coverage"
+    args = "-u jenkins:jenkins -v ${pwd()}/build:/application/build -v ${pwd()}/logs:/application/logs -v ${pwd()}/coverage:/application/coverage"
   }
 
   // Check package.json for known vulnerabilities
@@ -118,7 +118,7 @@ node('vets-website-linting') {
         builds[envName] = {
           dockerImage.inside(args) {
             sh "cd /application && npm --no-color run build -- --buildtype=${envName}"
-            sh "cd /application && echo \"${buildDetails('buildtype': envName)}\" > build/${envName}/BUILD.txt" 
+            sh "cd /application && echo \"${buildDetails('buildtype': envName)}\" > build/${envName}/BUILD.txt"
           }
         }
       } else {
