@@ -75,8 +75,9 @@ RUN mkdir -p logs/selenium
 
 COPY package.json .
 COPY yarn.lock .
+COPY .yarnrc .
 # skips all dev dependencies if NODE_ENV=production.. so..
-RUN yarn install
+RUN yarn install 
 
 # Copy application source to image
 
