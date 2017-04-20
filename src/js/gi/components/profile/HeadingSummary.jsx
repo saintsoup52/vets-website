@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import _ from 'lodash';
 
@@ -88,9 +89,9 @@ class HeadingSummary extends React.Component {
 }
 
 HeadingSummary.propTypes = {
-  institution: React.PropTypes.object,
-  onLearnMore: React.PropTypes.func,
-  onViewWarnings: React.PropTypes.func
+  institution: PropTypes.object,
+  onLearnMore: PropTypes.func,
+  onViewWarnings: PropTypes.func
 };
 
 export default HeadingSummary;
