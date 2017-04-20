@@ -158,6 +158,7 @@ node('vets-website-linting') {
 
   stage('Deploy') {
     if (isContentTeamUpdate()) {
+      echo "content branches fail intentionally - please use a branch without 'content/wip/' in the branch name to merge"
       throw new hudson.AbortException("content branches fail intentionally")
     }
 
