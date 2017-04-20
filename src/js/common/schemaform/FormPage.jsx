@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import _ from 'lodash/fp';
+import Scroll from 'react-scroll';
 
 import SchemaForm from './SchemaForm';
 import ProgressButton from '../components/form-elements/ProgressButton';
@@ -18,6 +19,15 @@ function focusForm() {
   }
 }
 
+const scroller = Scroll.scroller;
+const scrollToTop = () => {
+  scroller.scrollTo('topScrollElement', window.VetsGov.scroll || {
+    duration: 500,
+    delay: 0,
+    smooth: true,
+  });
+};
+
 /*
  * Component for regular form pages (i.e. not on the review page). Handles moving back
  * and forward through pages
@@ -32,11 +42,13 @@ class FormPage extends React.Component {
   }
 
   componentDidMount() {
+    scrollToTop();
     focusForm();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.route.pageConfig.pageKey !== this.props.route.pageConfig.pageKey) {
+      scrollToTop();
       focusForm();
     }
   }
