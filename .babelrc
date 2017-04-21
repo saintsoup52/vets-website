@@ -19,6 +19,14 @@
     "test": {
       "plugins": [ "istanbul" ]
     },
+    "production": {
+      "plugins": [
+        ["transform-react-remove-prop-types", {
+          "mode": "remove",
+          "removeImport": true
+        }]
+      ]
+    },
     "hot": {
       "plugins": [
         [
